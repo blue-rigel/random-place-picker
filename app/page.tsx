@@ -86,7 +86,7 @@ export default function Home() {
                     } & Plan, // Plan type with count
                     index: number,
                   ) => (
-                    <tr>
+                    <tr key={`row-${plan.id}`}>
                       <td>{index + 1}</td>
                       <td>{plan.title}</td>
                       <td>

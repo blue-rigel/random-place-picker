@@ -162,6 +162,8 @@ async function main() {
       });
     }
   }
+
+  console.log("DB seeded");
 }
 
 const getRandomInt = (minNum: number, maxNum: number) => {
