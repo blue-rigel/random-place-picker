@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
-import { NextApiRequest } from "next";
 
 type SubmissionInput = {
   planId: string;
@@ -10,7 +9,7 @@ type SubmissionInput = {
 };
 
 export async function GET(
-  req: NextApiRequest,
+  req: NextRequest,
   { params }: { params: { planId: string } },
 ) {
   const prisma = new PrismaClient();
