@@ -13,7 +13,8 @@
     "db:browse": "npx prisma studio",
     "db:format": "npx prisma format",
     "db:seed": "npx prisma db seed",
-    "postinstall": "npx prisma generate"
+    "postinstall": "npx prisma generate",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "dependencies": {
     "@govtechsg/sgds": "^2.1.1",

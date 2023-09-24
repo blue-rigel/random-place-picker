@@ -1,12 +1,6 @@
 import { Button, Form, Modal } from "@govtechsg/sgds-react";
 import { useState } from "react";
-import {
-  Path,
-  useForm,
-  UseFormRegister,
-  SubmitHandler,
-  FieldValues,
-} from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 type AddPlanProps = {
   show: boolean;
