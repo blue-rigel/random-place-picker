@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Plan {
+  id             String          @id
+  title          String
+  submissions    Submission[]
+  createdAt      DateTime        @default(now())
+  selectedOption SelectedOption?
+}
+
+model Submission {
+  id             Int             @id @default(autoincrement())
+  name           String
+  place          String
+  desc           String?
+  plan           Plan            @relation(fields: [planId], references: [id])
+  planId         String
+  createdAt      DateTime        @default(now())
+  selectedOption SelectedOption?
+}
+
+model SelectedOption {
+  planId       String     @unique
+  submissionId Int        @unique
+  plan         Plan       @relation(fields: [planId], references: [id])
+  submission   Submission @relation(fields: [submissionId], references: [id])
+}

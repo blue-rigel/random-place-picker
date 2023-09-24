@@ -1,0 +1,45 @@
+{
+  "name": "govtech-assessment",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "db:client": "npx prisma generate",
+    "db:migrate": "npx prisma migrate dev",
+    "db:browse": "npx prisma studio",
+    "db:format": "npx prisma format",
+    "db:seed": "npx prisma db seed",
+    "postinstall": "npx prisma generate"
+  },
+  "dependencies": {
+    "@govtechsg/sgds": "^2.1.1",
+    "@govtechsg/sgds-react": "^2.2.2",
+    "@prisma/client": "^5.3.1",
+    "@types/node": "20.6.3",
+    "@types/react": "18.2.22",
+    "@types/react-dom": "18.2.7",
+    "eslint": "8.50.0",
+    "eslint-config-next": "13.5.2",
+    "next": "13.5.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.46.2",
+    "sass": "^1.68.0",
+    "swr": "^2.2.2",
+    "typescript": "5.2.2",
+    "ulidx": "^2.1.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.1.0",
+    "prettier": "^3.0.3",
+    "prisma": "^5.3.1",
+    "ts-node": "^10.9.1"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  }
+}
